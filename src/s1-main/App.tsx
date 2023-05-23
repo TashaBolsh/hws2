@@ -6,6 +6,7 @@ function App() {
     return (
         <div className={s.App}>
             deploy test
+            
             {/* <HW1/> */}
             {/*раскомментировать по ходу выполнения*/}
             {/*<HW2/>*/}
