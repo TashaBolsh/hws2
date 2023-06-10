@@ -2,30 +2,53 @@
 }
 
 .inputAndButtonContainer {
+    display: flex;
+
 }
 
 .error {
+    color: red;
 }
 
 .input {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
 }
 
 .input:focus {
+
 }
 
 .errorInput {
+    width: 372px;
+    height: 36px;
+    border-radius: 5px;
+    border-color: red;
 }
 
 .button {
+    background-color: #0066CC;
+    height: 36px;
+    width: 78px;
+    border-radius: 3px;
+    font-family: Montserrat;
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-left: 12px;
 }
 
 .button:focus {
+
 }
 
 .button:active {
+    opacity: 100%;
 }
 
 .button:disabled {
+    opacity: 50%;
 }
 
 .text {
