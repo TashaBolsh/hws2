@@ -17,10 +17,10 @@ import s2 from '../../s1-main/App.module.css'
 * */
 
 // types
-export type AffairPriorityType = 'high' | 'low' | 'middle' // need to fix any
+export type AffairPriorityType = 'high' | 'middle' | 'low'
 export type AffairType = {
-    _id: number // need to fix any
-    name: string // need to fix any
+    _id: number
+    name: string
     priority: AffairPriorityType
 }
 export type FilterType = 'all' | AffairPriorityType
@@ -28,21 +28,19 @@ export type FilterType = 'all' | AffairPriorityType
 // constants
 const defaultAffairs: Array<AffairType> = [ // need to fix any
     {_id: 1, name: 'React', priority: 'high'}, // студенты могут изменить содержимое name и количество элементов в массиве, ...priority не менять!
-    {_id: 2, name: 'anime', priority: 'low'},
-    {_id: 3, name: 'games', priority: 'low'},
-    {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
+    {_id: 2, name: 'Anime', priority: 'low'},
+    {_id: 3, name: 'Games', priority: 'low'},
+    {_id: 4, name: 'Work', priority: 'high'},
+    {_id: 5, name: 'Html & Css', priority: 'middle'},
 ]
 
 // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => { // need to fix any
-    if (filter !== 'all') {
-        affairs = affairs.filter(affair => affair.priority === filter)
-    }
-    return affairs
+    if(filter !== 'all'){affairs = affairs.filter(affair => affair.priority === filter)}
+    return affairs // need to fix
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
-    affairs = affairs.filter(a => a._id !== _id);
+    affairs = affairs.filter(affair => affair._id !== _id)
     return affairs // need to fix
 }
 
@@ -52,8 +50,7 @@ function HW2() {
 
     const filteredAffairs = filterAffairs(affairs, filter)
     const deleteAffairCallback = (_id: number) => { // need to fix any
-        let newAffairs = deleteAffair(filteredAffairs,_id)
-        setAffairs(newAffairs)
+        deleteAffair(filteredAffairs,_id)
     }
 
     return (
