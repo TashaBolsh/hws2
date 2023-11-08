@@ -1,0 +1,20 @@
+.App {
+    --header_height: 60px;
+    max-width: 1350px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.hw {
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+    padding-bottom: 250px;
+}
+
+.hwTitle {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+}

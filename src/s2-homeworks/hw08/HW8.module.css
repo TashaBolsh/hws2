@@ -1,0 +1,40 @@
+.item {
+    font-weight: bold;
+}
+
+.item:last-of-type {
+}
+
+.users {
+    width: 100%;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    right: 0px;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 600px;
+}
+
+.thead {
+    background-color: #E5E5E5;
+    height: 36px;
+    font-weight: bold;
+
+}
+
+.nameCol {
+    width: 50%;
+    font-weight: normal;
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+}
+
+.ageCol {
+    width: 50%;
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+}

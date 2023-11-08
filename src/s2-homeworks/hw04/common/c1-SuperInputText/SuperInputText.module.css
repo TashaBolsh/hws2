@@ -1,0 +1,31 @@
+.input:focus {
+    outline: none;
+}
+
+.input {
+    width: 372px;
+    Height: 36px;
+    border-radius: 5px;
+}
+
+.inputWrapper {
+
+}
+
+.superInput {
+
+}
+
+.errorInput {
+    border: #CC1439 solid 1px;
+}
+
+.errorInput:focus {
+}
+
+.error {
+    color: #CC1439;
+    font-size:10px;
+    font-family: Montserrat;
+    display: block;
+}
