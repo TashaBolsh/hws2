@@ -21,8 +21,8 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             let stateCopy;
             stateCopy = state.filter( (stud) => stud.age >= 18 )
             stateCopy.sort((a, b) => {
-                if (a.age > b.age) {return 1}
-                if (a.age < b.age) {return -1}
+                if (a.name > b.name) {return 1}
+                if (a.name < b.name) {return -1}
                 return 0;
             })
             return stateCopy // need to fix
