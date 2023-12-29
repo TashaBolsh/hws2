@@ -3,8 +3,15 @@
     width: 133px;
     border-radius: 3px;
     border: none;
+    color: white;
     margin-left: 10px;
 }
+
+.button:first-child{
+    margin-left: 0px;
+}
+
+
 
 .disabled {
     background-color: #004D99;
