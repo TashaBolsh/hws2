@@ -14,10 +14,10 @@ import HW9 from "../s2-homeworks/hw09/HW9";
 function App() {
     return (
         <div className={s.App}>
-            <HW1/>
-            <HW2/>
-            <HW3/>
-            <HW4/>
+            {/*<HW1/>*/}
+            {/*<HW2/>*/}
+            {/*<HW3/>*/}
+            {/*<HW4/>*/}
             <HW5/>
             <HW6/>
             <HW7/>
