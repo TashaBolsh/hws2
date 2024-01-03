@@ -32,8 +32,7 @@ function Clock() {
 
     let formatter1 = new Intl.DateTimeFormat("ru", {
         hour: "numeric",
-        minute: "numeric",
-        second: "numeric"
+        minute: "numeric"
     })
     let formatter2 = new Intl.DateTimeFormat("ru");
     let formatter3 = new Intl.DateTimeFormat('en',{weekday: "long"})
