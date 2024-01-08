@@ -9,6 +9,7 @@
 .hw {
     border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
     padding-bottom: 250px;
+    width: 100%;
 }
 
 .hwTitle {
