@@ -1,9 +1,11 @@
 .container {
     width: 200px;
 }
+
 .wrapper {
     display: flex;
 }
+
 .number {
     width: 16px;
     color: #000;
