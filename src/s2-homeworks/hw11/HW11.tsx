@@ -21,8 +21,12 @@ function HW11() {
         if(typeof value === "number"){
             setValue1(value)
         }else{
-            setValue1(value[0])
-            setValue2(value[1])
+            if(value[0] !== value1){
+                setValue1(value[0])
+            }
+            if(value[1] !== value2){
+                setValue2(value[1])
+            }
         }
         console.log(event.target.value)
     }
