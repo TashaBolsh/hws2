@@ -2,21 +2,28 @@
 }
 
 .responseContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .imageContainer {
 }
 
 .image {
+    padding-top: 20px;
 }
 
 .textContainer{
 }
 
 .code {
+    font-size: 26px;
 }
 
 .text {
+    font-size: 18px;
 }
 .info {
+    font-size: 18px;
 }
