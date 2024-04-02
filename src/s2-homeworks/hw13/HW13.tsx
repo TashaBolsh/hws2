@@ -43,26 +43,27 @@ const HW13 = () => {
                 debugger
                 if(res.status === 200)
                 {
-                    setCode('Код 200!')
+                    setCode(`Код ${res.status} !`)
                     setImage(success200)
-                    setText('...все ок)')
-                    setInfo('код 200 - обычно означает что скорее всего все ок)')
+                    setText(res.data.errorText)
+                    setInfo(res.data.info)
                     state.isLoading=false
                 }
 
             })
             .catch((e) => {
+
                 if (e.response.status === 500) {
-                    setCode('Код 500!')
+                    setCode(`Код ${e.response.status} !`)
                     setImage(error500)
-                    setText('эмитация ошибки на сервере)')
-                    setInfo('ошибка 500 - обычно означает что что-то сломалось не сервере, например база данных)')
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                     state.isLoading = false
                 } else if (e.response.status === 400) {
-                    setCode('Код 400!')
+                    setCode(`Код ${e.response.status} !`)
                     setImage(error400)
-                    setText('Ты не отправил success в body вообще!')
-                    setInfo('Ошибка 400 обычно означает что скорее всего форнт отправил что-то не то на бэк!')
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
                     state.isLoading = false
                 } else{
                     setCode('Error!')
