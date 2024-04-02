@@ -9,6 +9,7 @@ import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 import {AppStoreType} from "../hw10/bll/store";
 import {useSelector} from 'react-redux'
+import App from "../../s1-main/App";
 
 /*
 * 1 - дописать функцию send
@@ -40,37 +41,43 @@ const HW13 = () => {
             .post(url, {success: x})
             .then((res) => {
                 let isLoading = true
-                debugger
-                if(res.status === 200)
-                {
+                const setParametrs = () => {
                     setCode(`Код ${res.status} !`)
-                    setImage(success200)
                     setText(res.data.errorText)
                     setInfo(res.data.info)
                     state.isLoading=false
                 }
+                if(res.status === 200)
+                {
+                    setParametrs()
+                    setImage(success200)
+                }
 
             })
             .catch((e) => {
+                const setParametrsError = () => {
+                    setCode(`Код ${e.response.status} !`)
+                    setText(e.response.data.errorText)
+                    setInfo(e.response.data.info)
+                    state.isLoading = false
+                }
 
-                if (e.response.status === 500) {
-                    setCode(`Код ${e.response.status} !`)
-                    setImage(error500)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
-                    state.isLoading = false
-                } else if (e.response.status === 400) {
-                    setCode(`Код ${e.response.status} !`)
-                    setImage(error400)
-                    setText(e.response.data.errorText)
-                    setInfo(e.response.data.info)
-                    state.isLoading = false
-                } else{
+                if (e.response === undefined)
+                {
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText('Network')
                     setInfo('Error AxiosError')
                     state.isLoading=false
+                }
+                else{
+                    if (e.response.status === 500) {
+                        setParametrsError()
+                        setImage(error500)
+                    } else if (e.response.status === 400) {
+                        setParametrsError()
+                        setImage(error400)
+                    }
                 }
             })
     }
