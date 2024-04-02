@@ -40,6 +40,7 @@ const HW13 = () => {
             .post(url, {success: x})
             .then((res) => {
                 let isLoading = true
+                debugger
                 if(res.status === 200)
                 {
                     setCode('Код 200!')
@@ -47,35 +48,29 @@ const HW13 = () => {
                     setText('...все ок)')
                     setInfo('код 200 - обычно означает что скорее всего все ок)')
                     state.isLoading=false
-                    return true
-                }
-
-                else if(send(false)) {
-                    setCode('Код 500!')
-                    setImage(error500)
-                    setText('эмитация ошибки на сервере)')
-                    setInfo('ошибка 500 - обычно означает что что-то сломалось не сервере, например база данных)')
-                    state.isLoading=false
-                    return false
-                }
-
-                else if(x === undefined)
-                {
-                    setCode('Код 400!')
-                    setImage(error400)
-                    setText('Ты не отправил success в body вообще!')
-                    setInfo('Ошибка 400 обычно означает что скорее всего форнт отправил что-то не то на бэк!')
-                    state.isLoading=false
-                    return undefined
                 }
 
             })
             .catch((e) => {
-                setCode('Error!')
-                setImage(errorUnknown)
-                setText('Network')
-                setInfo('Error AxiosError')
-                state.isLoading=false
+                if (e.response.status === 500) {
+                    setCode('Код 500!')
+                    setImage(error500)
+                    setText('эмитация ошибки на сервере)')
+                    setInfo('ошибка 500 - обычно означает что что-то сломалось не сервере, например база данных)')
+                    state.isLoading = false
+                } else if (e.response.status === 400) {
+                    setCode('Код 400!')
+                    setImage(error400)
+                    setText('Ты не отправил success в body вообще!')
+                    setInfo('Ошибка 400 обычно означает что скорее всего форнт отправил что-то не то на бэк!')
+                    state.isLoading = false
+                } else{
+                    setCode('Error!')
+                    setImage(errorUnknown)
+                    setText('Network')
+                    setInfo('Error AxiosError')
+                    state.isLoading=false
+                }
             })
     }
 
