@@ -1,7 +1,8 @@
 .tech {
-
+    display: flex;
+    justify-content: start;
 }
 
 .loading {
-
+    padding-left: 300px;
 }
