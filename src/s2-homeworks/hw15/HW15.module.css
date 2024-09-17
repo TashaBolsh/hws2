@@ -1,27 +1,63 @@
 .tech {
+    padding: 10px;
+    display: flex;
     width: 50vw;
+    height: 30px;
+    align-items: center;
 }
 
 .developer {
-
+    padding: 10px;
+    display: flex;
+    width: 50vw;
+    height: 30px;
+    text-transform: capitalize;
+    align-items: center;
 }
 
 .techHeader {
+    padding: 10px;
+    display: flex;
     width: 50vw;
+    background-color: #E5E5E5;
+    height: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+    align-items: center;
 }
 
 .developerHeader {
-
+    padding: 10px;
+    display: flex;
+    width: 50vw;
+    background-color: #E5E5E5;
+    height: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+    align-items: center;
 }
 
 .row {
     display: flex;
+    width: 50vw;
+    font-weight: normal;
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
 }
 
 .rowHeader {
     display: flex;
+    width: 50vw;
+    border-bottom: rgba(0, 0, 0, 0.1) 2px solid;
+    margin-top:15px ;
 }
 
 .loading {
-
+    /*свг и/или анимация*/
+    width: 108px;
+    height: 108px;
+    background-image: url(Loading.svg);
+    background-size: cover;
+    position: absolute;
+    left: 30%;
+    top:20%;
 }
