@@ -52,7 +52,11 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-
+                if(res?.data){
+                    setTechs(res?.data.techs)
+                    setTotalCount(res.data.totalCount)
+                    setLoading(false)
+                }
                 // сохранить пришедшие данные
 
                 //
@@ -60,27 +64,22 @@ const HW15 = () => {
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
+        setPage(newPage)
+        setCount(newCount)
+        sendQuery({page: newPage, count: newCount})
+        setSearchParams({sort: sort, page: newPage.toString(), count: newCount.toString()})
         // делает студент
 
-        // setPage(
-        // setCount(
-
-        // sendQuery(
-        // setSearchParams(
-
-        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
+        setSort(newSort)
+        setPage(2)
 
-        // sendQuery(
-        // setSearchParams(
-
-        //
+        sendQuery({sort:newSort, page, count})
+        setSearchParams({sort: newSort, page: page.toString(), count: count.toString()})
     }
 
     useEffect(() => {
@@ -102,12 +101,16 @@ const HW15 = () => {
         </div>
     ))
 
+    let opacity = idLoading ? "20%" : "100%"
+    console.log()
+
     return (
         <div id={'hw15'}>
             <div className={s2.hwTitle}>Homework #15</div>
 
-            <div className={s2.hw}>
-                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
+            <div className={s2.hw} style={{opacity:opacity}}>
+                {idLoading && <div id={'hw15-loading'} className={s.loading}></div>}
+
 
                 <SuperPagination
                     page={page}
