@@ -73,7 +73,6 @@ const HW15 = () => {
     }
 
     const onChangeSort = (newSort: string) => {
-        // делает студент
 
         setSort(newSort)
         setPage(1)
