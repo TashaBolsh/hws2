@@ -76,7 +76,7 @@ const HW15 = () => {
         // делает студент
 
         setSort(newSort)
-        setPage(2)
+        setPage(1)
 
         sendQuery({sort:newSort, page, count})
         setSearchParams({sort: newSort, page: page.toString(), count: count.toString()})
