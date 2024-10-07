@@ -67,7 +67,7 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
         sendQuery({page: newPage, count: newCount})
-
+        setSearchParams({sort: sort, page: newPage.toString(), count: newCount.toString()})
         // делает студент
 
     }
@@ -76,10 +76,10 @@ const HW15 = () => {
         // делает студент
 
         setSort(newSort)
-        setPage(1)
+        setPage(2)
 
-        sendQuery({sort:newSort})
-        setSearchParams(newSort)
+        sendQuery({sort:newSort, page, count})
+        setSearchParams({sort: newSort, page: page.toString(), count: count.toString()})
     }
 
     useEffect(() => {
@@ -102,6 +102,7 @@ const HW15 = () => {
     ))
 
     let opacity = idLoading ? "20%" : "100%"
+    console.log()
 
     return (
         <div id={'hw15'}>
