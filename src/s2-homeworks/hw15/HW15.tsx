@@ -33,7 +33,7 @@ const getTechs = (params: ParamsType) => {
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
             {params}
         )
-        .then(res => res.data)
+        .then(res => res) // Исправлено здесь, чтобы вернуть полный ответ
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
             throw e;
@@ -54,11 +54,14 @@ const HW15 = () => {
         getTechs(params)
             .then((res) => {
                 // делает студент
-                if(res){
-                    setTechs(res.techs)
-                    setTotalCount(res.totalCount)
+                if(res?.data){
+                    setTechs(res?.data.techs)
+                    setTotalCount(res.data.totalCount)
                     setLoading(false)
                 }
+                // сохранить пришедшие данные
+
+                //
             })
     }
 
@@ -82,7 +85,7 @@ const HW15 = () => {
     }
 
     useEffect(() => {
-        const params = Object.fromEntries(searchParams.entries())
+        const params = Object.fromEntries(searchParams)
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
