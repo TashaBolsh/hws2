@@ -83,12 +83,15 @@ const HW15 = () => {
     }
 
     useEffect(() => {
-        const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
-    }, [searchParams])
-// с параметрами
+        const params = new URLSearchParams(window.location.search)
+        const pageParam = params.get('page') || '1'
+        const countParam = params.get('count') || '4'
+
+        sendQuery({page: +pageParam, count: +countParam})
+        setPage(+pageParam)
+        setCount(+countParam)
+    }, [])
+
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
             <div id={'hw15-tech-' + t.id} className={s.tech}>
