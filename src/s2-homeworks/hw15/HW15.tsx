@@ -88,7 +88,7 @@ const HW15 = () => {
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [searchParams])
-
+// с параметрами
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
             <div id={'hw15-tech-' + t.id} className={s.tech}>
