@@ -89,7 +89,6 @@ const HW15 = () => {
         setCount(+params.count || 4)
     }, [searchParams])
 
-    //
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
             <div id={'hw15-tech-' + t.id} className={s.tech}>
