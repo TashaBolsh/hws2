@@ -14,7 +14,6 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
-
 type TechType = {
     id: number
     tech: string
